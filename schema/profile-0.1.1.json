@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ppcp.jardenberg.net/schema/profile-0.1.1.json",
+  "title": "PPCP public profile 0.1.1",
+  "description": "Draft public-person context representation; does not certify the claims it contains.",
+  "type": "object",
+  "properties": {
+    "ppcp_version": {
+      "const": "0.1.1"
+    },
+    "id": {
+      "type": "string",
+      "format": "uri"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "Person"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "preferred_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "same_as": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "preferred_name",
+        "same_as"
+      ],
+      "additionalProperties": false
+    },
+    "publisher": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "name",
+        "url"
+      ],
+      "additionalProperties": false
+    },
+    "canonical_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "profile_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "publication_status": {
+      "enum": [
+        "public-draft",
+        "published"
+      ]
+    },
+    "review_status": {
+      "enum": [
+        "owner-review-pending",
+        "owner-approved"
+      ]
+    },
+    "authorship": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "human-authored",
+            "ai-assisted-editorial",
+            "mixed"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kind",
+        "label"
+      ],
+      "additionalProperties": false
+    },
+    "license": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "attribution": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "attribution",
+        "exceptions"
+      ],
+      "additionalProperties": false
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "mime_type": {
+          "const": "text/markdown"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "markdown_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "mime_type",
+        "text",
+        "markdown_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content": {
+            "type": "string"
+          },
+          "assertion_type": {
+            "enum": [
+              "self-description",
+              "sourced-fact",
+              "quotation",
+              "editorial-synthesis",
+              "mixed"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "content",
+          "assertion_type",
+          "source_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "role": {
+            "enum": [
+              "primary-self-source",
+              "independent-source",
+              "quoted-material",
+              "background"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "url",
+          "role"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "ppcp_version",
+    "id",
+    "subject",
+    "publisher",
+    "canonical_url",
+    "profile_version",
+    "updated_at",
+    "publication_status",
+    "review_status",
+    "authorship",
+    "license",
+    "content",
+    "sections",
+    "sources"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,26 @@
+{
+  "protocol": "PPCP",
+  "name": "Public Personal Context Protocol",
+  "version": "0.1.1",
+  "status": "draft-proposal",
+  "date": "2026-09-16",
+  "canonical_site": "https://ppcp.jardenberg.net/",
+  "repository": "https://github.com/jardenberg/ppcp",
+  "license": "CC-BY-4.0",
+  "specification": "spec/0.1.1.md",
+  "schemas": [
+    "schema/profile-0.1.0.json",
+    "schema/profile-0.1.1.json"
+  ],
+  "reference_profile": "https://joakim.jardenberg.net/",
+  "reference_mcp": "https://joakim.jardenberg.net/mcp",
+  "file_sha256": {
+    "SPEC.md": "db951a6e2faef180ece647734f3d61ef181251f8a20ed57f9462697f9b8d6f00",
+    "examples/profile-0.1.0.json": "bf162af5812014447b98d9bdea5825c3f1ecb37e00e46520194bfbe2408c2df6",
+    "examples/profile-0.1.1.json": "c1332ae6dc629fd3b2e4dc90ad3f2cd90ba5aef9906d0b01d78569ef25cbc273",
+    "schema/profile-0.1.0.json": "87399204eec6af742540e61acac8e9657faf3ab0afb5fcb06a06f5cc3fc180e0",
+    "schema/profile-0.1.1.json": "4f06c4d7a39c9fbadd49fc9957454efb644aa96da4d63fcf1bca045112490bbf",
+    "spec/0.1.0.md": "6ebb21d7bd9e680a05bf723d525d3fb0415eb89009dafbe393032c849b64e008",
+    "spec/0.1.1.md": "db951a6e2faef180ece647734f3d61ef181251f8a20ed57f9462697f9b8d6f00"
+  }
+}

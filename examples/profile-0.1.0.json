@@ -1,0 +1,91 @@
+{
+  "ppcp_version": "0.1.0",
+  "id": "https://example.com/#person",
+  "subject": {
+    "type": "Person",
+    "name": "Alex Example",
+    "preferred_name": "Alex",
+    "same_as": [
+      "https://example.com/",
+      "https://example.org/alex-example"
+    ]
+  },
+  "publisher": {
+    "name": "Alex Example",
+    "url": "https://example.com/"
+  },
+  "canonical_url": "https://example.com/",
+  "profile_version": "2026.1",
+  "updated_at": "2026-09-13T09:00:00Z",
+  "publication_status": "public-draft",
+  "review_status": "owner-review-pending",
+  "authorship": {
+    "kind": "mixed",
+    "label": "Human-authored prose with AI-assisted editorial tidying; quotations retain their sources."
+  },
+  "license": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Alex Example",
+    "exceptions": [
+      "Conference programme title quoted from its public listing."
+    ]
+  },
+  "content": {
+    "mime_type": "text/markdown",
+    "text": "# Alex Example — public context\n\nVersion 2026.1 · Public draft · Owner review pending\nCanonical: https://example.com/\nLicense: CC BY 4.0, Alex Example.\n\n## Who I am\nI am Alex Example, a fictional person used to demonstrate the PPCP draft. I write about\npublic infrastructure and I maintain this profile myself. This section is my own\nself-description, not an independently verified account.\n\n## Family and personal life\nI live in a small flat with my partner Sam and our elderly cat. Weekends are for slow\ncooking, long walks and calling my mother. I mention this because a person is not a CV,\nand because these commitments genuinely shape when and how I work.\n\n## How I like to work\nWritten first, meetings second. I answer asynchronously within a day. If a decision needs\nme, say so explicitly — I do not read urgency into silence.\n\n## Sourced facts\nI have spoken at the fictional Open Web Days conference, as listed in its public\nprogramme. That claim is sourced, not self-asserted.\n",
+    "markdown_sha256": "bcda4eefff98b61aa0bd54c26a05f98e2662afdee46608ae4a481d1aba6901c4"
+  },
+  "sections": [
+    {
+      "id": "who-i-am",
+      "title": "Who I am",
+      "content": "I am Alex Example, a fictional person used to demonstrate the PPCP draft.",
+      "assertion_type": "self-description",
+      "source_ids": [
+        "own-site"
+      ]
+    },
+    {
+      "id": "family-and-personal-life",
+      "title": "Family and personal life",
+      "content": "I live with my partner Sam and an elderly cat; weekends are for cooking, walks and family calls.",
+      "assertion_type": "self-description",
+      "source_ids": [
+        "own-site"
+      ]
+    },
+    {
+      "id": "how-i-like-to-work",
+      "title": "How I like to work",
+      "content": "Written first, meetings second; asynchronous replies within a day.",
+      "assertion_type": "self-description",
+      "source_ids": [
+        "own-site"
+      ]
+    },
+    {
+      "id": "sourced-facts",
+      "title": "Sourced facts",
+      "content": "Spoke at the fictional Open Web Days conference, per its public programme.",
+      "assertion_type": "sourced-fact",
+      "source_ids": [
+        "owd-programme"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "own-site",
+      "title": "Alex Example — personal site",
+      "url": "https://example.com/",
+      "role": "primary-self-source"
+    },
+    {
+      "id": "owd-programme",
+      "title": "Open Web Days public programme (fictional)",
+      "url": "https://example.org/open-web-days/programme",
+      "role": "independent-source"
+    }
+  ]
+}

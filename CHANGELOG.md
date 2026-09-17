@@ -20,3 +20,8 @@ Current draft: 0.1.1. This repository distributes the same published specificati
 ### 2026-09-16
 - Initial public repository with drafts 0.1.0 and 0.1.1, versioned schemas, fictional examples, CC BY 4.0 licence, contribution guidance and automated validation.
 - Specification and schema bytes match the published website. The deployed website and reference MCP remain separate applications.
+
+## Diagnostic tooling
+
+### Reference access probe 0.1.0 - 2026-09-17
+- Added an on-demand GitHub-hosted DNS/HTTP/MCP probe for the public reference implementation. Client-specific blocking is reported explicitly, separately from successful named-client retrieval. It does not claim search indexing, actual crawler access, or cryptographic verification. No scheduled monitoring was created.

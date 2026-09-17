@@ -23,5 +23,8 @@ Current draft: 0.1.1. This repository distributes the same published specificati
 
 ## Diagnostic tooling
 
+### Reference access probe 0.1.1 - 2026-09-17
+- Added direct IPv4 UDP and TCP checks against every discovered authoritative nameserver, with raw responses and a separate hostname NS lookup. A failed or unavailable authoritative check fails the diagnostic run. Correctly labels the empty HTTP 202 MCP notification acknowledgement.
+
 ### Reference access probe 0.1.0 - 2026-09-17
 - Added an on-demand GitHub-hosted DNS/HTTP/MCP probe for the public reference implementation. Client-specific blocking is reported explicitly, separately from successful named-client retrieval. It does not claim search indexing, actual crawler access, or cryptographic verification. No scheduled monitoring was created.

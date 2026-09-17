@@ -8,7 +8,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
-VERSION = '0.1.1'
+VERSION = '0.1.2'
 ORIGIN = 'https://joakim.jardenberg.net'
 
 
@@ -50,6 +50,7 @@ def authoritative_dns():
 
 
 def fetch(path, user_agent, body=None):
+    notification = body is not None and 'id' not in body
     headers={'User-Agent':user_agent,'Accept':'text/html' if body is None else 'application/json, text/event-stream'}
     if body is not None:
         headers.update({'Content-Type':'application/json','MCP-Protocol-Version':'2025-11-25'})
@@ -64,7 +65,7 @@ def fetch(path, user_agent, body=None):
         data=r.read();text=data.decode('utf-8','replace')
         result={'path':path,'status':r.status,'bytes':len(data),'content_type':r.headers.get('Content-Type'),'profile_text_present':'Stacked Principles' in text and 'Katarina' in text}
         if r.status>=400:result['hosting_error_1010']='1010' in text
-        if body is not None and 'id' not in body and r.status == 202 and not data:
+        if notification and r.status == 202 and not data:
             result['notification_accepted'] = True
         elif body is not None:
             try:

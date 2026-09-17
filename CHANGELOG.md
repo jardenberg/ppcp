@@ -23,6 +23,9 @@ Current draft: 0.1.1. This repository distributes the same published specificati
 
 ## Diagnostic tooling
 
+### Reference access probe 0.1.2 - 2026-09-17
+- Fixed notification classification before request serialization; the 0.1.1 diagnostic run stopped on a probe error before emitting its report. This was not a reference-server failure.
+
 ### Reference access probe 0.1.1 - 2026-09-17
 - Added direct IPv4 UDP and TCP checks against every discovered authoritative nameserver, with raw responses and a separate hostname NS lookup. A failed or unavailable authoritative check fails the diagnostic run. Correctly labels the empty HTTP 202 MCP notification acknowledgement.
 
